@@ -1,0 +1,607 @@
+body
+	min-height: 400px
+#meh-root
+	height: 100%
+.meh
+	height: 100%
+	position: relative
+	overflow: hidden
+	&.form-visible
+		.content-dimmer
+			opacity: 1
+			visibility: visible
+.button
+	text-decoration: none
+	cursor: pointer
+	display: inline-block
+	height: 50px
+	box-sizing: border-box
+	border-radius: 100px
+	border: solid 2px fade-out(black, 0.7)
+	text-transform: uppercase
+	letter-spacing: 1px
+	padding: 0 25px
+	font-weight: bold
+	background-color: transparent
+	color: black
+	transition: background-color 200ms, border-color 200ms, color 200ms
+	span
+		font-size: 11px
+	&:hover
+		background-color: black
+		color: white
+		// border-color: fade-out(white, 0.7)
+.header
+	height: 100px
+	position: absolute
+	z-index: 3
+	right: 0
+	top: 0
+	left: 0
+	.container
+		height: 100%
+.h-logo
+	float: left
+	height: 100%
+	position: relative
+	img
+		transition: opacity 200ms
+		+stretch($right: auto)
+	.hl-dark
+		opacity: 0
+.h-appointment
+	float: right
+	height: 100%;
+	+valign
+%controls
+	li
+		height: 30px
+		position: relative
+		cursor: pointer
+		&:before
+			content: ''
+			+size(10 10)
+			transition: background-color 200ms, border-color 200ms
+			+stretch
+			border-radius: 50%
+			border: 2px solid transparent
+			background-color: rgba(0, 0, 0, 0.3)
+			background-clip: content-box
+		&:hover
+			&:before
+				background-color: rgba(0, 0, 0, 0.5)
+		&.active
+			cursor: default
+			&:before
+				border-color: black
+				background-color: white
+.h-nav
+	margin: 0 200px
+	text-align: center
+	ul
+		display: inline-block
+		+blocks
+		li
+			cursor: pointer
+			letter-spacing: 1px
+			text-transform: uppercase
+			font-weight: bold
+			height: 100px
+			padding: 0 10px
+			transition: color 200ms
+			+valign
+			span
+				font-size: 11px
+			&.active
+				cursor: default
+.content
+	height: 100%
+	position: relative
+	z-index: 1
+.content-slides
+	height: 100%
+	position: relative
+	z-index: 1
+	line-height: 1.5
+@keyframes slide-prev-out
+	from
+		transform: translateY(0)
+	to
+		transform: translateY(-100%)
+@keyframes slide-prev-in
+	from
+		transform: translateY(0)
+	to
+		transform: translateY(100%)
+@keyframes content-block-fade-in
+	from
+		opacity: 0
+		transform: translateY(15px)
+	to
+		opacity: 1
+		transform: translateY(0)
+.content-slide
+	+stretch
+	z-index: 1
+	&.active
+		z-index: 2
+		.content-block
+			animation: content-block-fade-in 500ms ease-in-out both
+			animation-delay: 200ms
+			+ .content-block
+				animation-delay: 350ms
+				+ .content-block
+					animation-delay: 500ms
+	&.prev-out
+		animation: slide-prev-out 500ms ease-out both
+		z-index: 3
+	&.prev-in
+		animation: slide-prev-in 500ms ease-out both
+		z-index: 3
+.content-hero-slider
+	+stretch
+	background-color: white
+	z-index: 1
+.chs-slides
+	+stretch
+	z-index: 1
+@keyframes hero-slide-prev-out
+	from
+		transform: translateX(0)
+	to
+		transform: translateX(-100%)
+@keyframes hero-slide-prev-in
+	from
+		transform: translateX(0)
+	to
+		transform: translateX(100%)
+@keyframes hero-slide-next-out
+	from
+		transform: translateX(-100%)
+	to
+		transform: translateX(0)
+@keyframes hero-slide-next-in
+	from
+		transform: translateX(100%)
+	to
+		transform: translateX(0)
+.chs-slide
+	+stretch
+	z-index: 1
+	visibility: hidden
+	&.active
+		z-index: 2
+		visibility: visible
+	&.prev-out
+		animation: hero-slide-prev-out 500ms ease-out both
+		z-index: 3
+		visibility: visible
+	&.prev-in
+		animation: hero-slide-prev-in 500ms ease-out both
+		z-index: 3
+		visibility: visible
+	&.next-out
+		animation: hero-slide-next-out 500ms ease-out both
+		z-index: 3
+		visibility: visible
+	&.next-in
+		animation: hero-slide-next-in 500ms ease-out both
+		z-index: 3
+		visibility: visible
+	img
+		position: absolute
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		height: 90%
+.chs-texts
+	+stretch($left: 20, $right: auto)
+	width: 300px
+	z-index: 2
+.chs-text
+	+stretch
+	+valign(middle)
+	opacity: 0
+	visibility: hidden
+	transition: opacity 400ms, visibility 400ms
+	&.active
+		opacity: 1
+		visibility: visible
+		transition: opacity 400ms 300ms, visibility 400ms 300ms
+	p
+		font-size: 18px
+		margin-bottom: 20px
+	span
+		display: block
+		font-size: 15px
+.chs-controls
+	@extend %controls
+	position: absolute
+	left: 20px
+	bottom: 20px
+	z-index: 3
+	ul
+		li
+			width: 30px
+			display: inline-block
+.content-social
+	position: absolute
+	right: 20px
+	bottom: 20px
+	z-index: 2
+	+blocks
+	a
+		box-sizing: border-box
+		border-radius: 50%
+		+size(50 50)
+		border: solid 2px rgba(0, 0, 0, 0.3)
+		transition: border-color 200ms
+		position: relative
+		margin-left: 20px
+		&:before
+			content: ''
+			+stretch
+		&:hover
+			border-color: rgba(0, 0, 0, 0.5)
+.cs-facebook
+	&:before
+		+size(18 18)
+		background-image: url(img('facebook.svg'))
+.cs-instagram
+	&:before
+		+size(18 18)
+		background-image: url(img('instagram.svg'))
+.cs-twitter
+	&:before
+		+size(19 15)
+		background-image: url(img('twitter.svg'))
+.content-controls
+	z-index: 2
+	@extend %controls
+	position: absolute
+	right: 0
+	top: -50%
+	transform: translateY(-50%)
+	ul
+		width: 50px
+		li
+			width: 100%
+.content-idea
+	color: white
+	background-color: black
+	.container
+		height: 100%
+		+valign
+.ci-container
+	width: 100%
+	+blocks(3)
+	text-align: center
+.ci-item
+	width: 30%
+	box-sizing: border-box
+	padding: 0 40px
+	figure
+		height: 80px
+		margin-bottom: 35px
+		img
+			display: inline-block
+			max-height: 100%
+	p
+		color: rgba(255, 255, 255, 0.5)
+h3
+	font-weight: normal
+	font-size: 17px
+	margin-bottom: 7px
+.content-features
+	color: white
+	background-color: black
+	.container
+		height: 100%
+		+valign
+.cf-container
+	width: 100%
+	+blocks(3)
+	text-align: center
+	counter-reset: features
+.cf-item
+	width: 30%
+	box-sizing: border-box
+	padding: 0 40px
+	&:before
+		box-sizing: border-box
+		border: 2px solid rgba(255, 255, 255, 0.2)
+		border-radius: 50%
+		+size(100 100)
+		display: inline-block
+		counter-increment: features
+		content: counter(features)
+		font-size: 40px
+		line-height: 100px
+		margin-bottom: 25px
+	p
+		color: rgba(255, 255, 255, 0.5)
+.content-prices
+	color: white
+	background-color: black
+	.container
+		height: 100%
+		+valign
+.cp-container
+	width: 100%
+	+blocks(3)
+	text-align: center
+.cp-item
+	width: 30%
+	box-sizing: border-box
+	padding: 0 45px
+	p
+		color: rgba(255, 255, 255, 0.5)
+.cp-price
+	font-size: 40px
+	padding-bottom: 15px
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+	margin-bottom: 30px
+	&:after
+		display: inline-block
+		margin-left: 0.25em
+		font-size: 0.7em
+		content: '₽'
+		color: rgba(255, 255, 255, 0.5)
+.content-cooperate
+	color: white
+	background-color: black
+	.container
+		height: 100%
+		+valign
+.cc-container
+	width: 100%
+	text-align: center
+h4
+	font-size: 18px
+	font-weight: normal
+	line-height: 1.1
+	margin-bottom: 5px
+.cc-block
+	p
+		color: rgba(255, 255, 255, 0.5)
+		font-size: 15px
+.cc-middle
+	height: 135px
+	+valign
+%ccm-button
+	+size(32 32)
+	border: solid 2px rgba(255, 255, 255, 0.3)
+	position: relative
+	transition: border-color 200ms
+	border-radius: 50%
+	cursor: pointer
+	-webkit-user-select: none
+	&:hover
+		border-color: rgba(255, 255, 255, 0.6)
+	&:before
+		content: ''
+		+stretch
+.ccm-decrease
+	@extend %ccm-button
+	&:before
+		+size(10 10)
+		transform: rotate(90deg)
+		background-image: url(img('minus.svg'))
+.ccm-increase
+	@extend %ccm-button
+	&:before
+		+size(10 10)
+		background-image: url(img('plus.svg'))
+.ccm-counter
+	width: 100px
+	font-size: 40px
+	-webkit-user-select: none
+.ccm-result
+	font-size: 40px
+	white-space: nowrap
+	&:after
+		display: inline-block
+		margin-left: 0.3em
+		font-size: 0.7em
+		content: '₽'
+		color: rgba(255, 255, 255, 0.5)
+.form
+	background-color: white
+	width: 320px
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 100%
+	z-index: 5
+	transform: translateX(0)
+	visibility: hidden
+	transition: transform 200ms ease-out, visibility 200ms
+	&.visible
+		transform: translateX(-100%)
+		visibility: visible
+	header
+		padding: 40px 20px
+		border-bottom: 1px solid #d8d8d8
+		text-align: center
+		margin-bottom: 30px
+	h4
+		font-size: 18px
+		font-weight: normal
+		margin-bottom: 5px
+	h5
+		font-size: 15px
+		color: #aaa
+		font-weight: normal
+	.input
+		margin-bottom: 30px
+		width: 100%
+.form-container
+	+stretch($bottom: 65)
+	overflow: auto
+	.button
+		width: 100%
+		margin-bottom: 30px
+.form-sent
+	+stretch($bottom: 65)
+	// overflow: auto
+	+valign(middle)
+.fs-container
+	width: 100%
+	text-align: center
+	p
+		font-size: 15px
+		color: #aaa
+.fs-icon
+	display: inline-block
+	border-radius: 50%
+	box-sizing: border-box
+	border: 2px solid black
+	+size(100 100)
+	margin-bottom: 23px
+	position: relative
+	&:before
+		content: ''
+		+size(42 29)
+		background-image: url(img('done.svg'))
+		+stretch
+
+.form-hide
+	border-top: 1px solid #d8d8d8
+	height: 64px
+	+stretch($top: auto)
+	cursor: pointer
+	&:after
+		content: ''
+		+size(20 20)
+		opacity: 0.7
+		transition: opacity 200ms
+		background-image: url(img('close.svg'))
+		+stretch
+	&:hover
+		&:after
+			opacity: 1
+.ss-title
+	cursor: pointer
+	position: relative
+	z-index: 3
+	p
+		font-size: 15px
+		margin-bottom: 5px
+	span
+		color: #aaa
+		font-size: 13px
+.sst-container
+	padding: 15px 0
+	border-bottom: 1px solid #d8d8d8
+	transition: border-color 200ms
+	position: relative
+	&:after
+		transition: transform ease-out 200ms
+		content: ''
+		+stretch($left: auto)
+		+size(18 10)
+		background-image: url(img('select.svg'))
+.form-padded
+	padding: 0 30px
+.service-select
+	margin-bottom: 35px
+	position: relative
+	&.open
+		.sst-container
+			border-color: rgba(0, 0, 0, 0.4)
+			&:after
+				transform: rotate(180deg)
+		.ss-dropdown
+			visibility: visible
+			opacity: 1
+			transform: translateY(5px)
+			transition: opacity 300ms, visibility 300ms, transform 300ms
+		~ *
+			visibility: hidden
+.ss-dropdown
+	position: absolute
+	left: 0
+	right: 0
+	top: 100%
+	background-color: white
+	z-index: 2
+	visibility: hidden
+	opacity: 0
+	margin-top: -6px
+	transition: opacity 300ms, visibility 300ms, transform 0ms 300ms
+.ssd-item
+	padding: 17px 30px
+	cursor: pointer
+	transition: background-color 200ms
+	&:after
+		content: ''
+		clear: both
+		display: block
+	&:hover
+		background-color: #f6f6f6
+	&.selected
+		cursor: default
+		background-color: black
+		.ssd-title
+			color: white
+		.ssd-price
+			color: fade-out(white, 0.4)
+.ssd-title
+	float: left
+.ssd-price
+	float: right
+	color: fade-out(black, 0.4)
+	&:after
+		display: inline-block
+		margin-left: 0.4em
+		font-size: 0.9em
+		content: '₽'
+.content-dimmer
+	+stretch
+	background-color: rgba(0, 0, 0, 0.5)
+	z-index: 4
+	visibility: hidden
+	opacity: 0
+	transition: opacity 150ms, transform 150ms
+.content-appointment,
+.nav-mobile,
+.nm-hide
+	display: none
+
+
+.dark
+	&:not(.nav-mobile-visible)
+		.h-logo
+			.hl-light
+				opacity: 0
+			.hl-dark
+				opacity: 1
+	.button
+		&:not(.light)
+			color: white
+			background-color: black
+			border-color: fade-out(white, 0.7)
+			&:hover
+				color: black
+				background-color: white
+				// border-color: fade-out(black, 0.7)
+	.h-nav
+		color: white
+		li
+			&.active
+				color: rgba(255, 255, 255, 0.5)
+	%controls
+		li
+			&:before
+				background-color: rgba(255, 255, 255, 0.5)
+			&:hover
+				&:before
+			&.active
+				&:before
+					border-color: white
+					background-color: transparent
+	.nmt-show
+		&:before
+			background-color: white
+		&:after
+			background-color: white

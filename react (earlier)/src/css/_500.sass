@@ -1,0 +1,201 @@
+@media (max-width: 500px)
+	html
+		height: auto
+	body
+		height: auto
+		max-width: 500px
+		min-width: 320px
+	#meh-root
+		height: auto
+	.meh
+		height: auto
+		overflow-x: hidden
+		overflow-y: auto
+	.content
+		height: auto
+	.content-slides
+		height: auto
+	.content-slide
+		position: static
+		animation: none
+		&:not(.content-index)
+			padding-top: 150px
+			&:last-child
+				padding-bottom: 150px
+		&.active
+			animation: none
+	.content-index
+		height: calc(100vh - 65px)
+		position: relative
+		box-sizing: border-box
+	.ci-item
+		display: block
+		width: 100%
+		padding: 0
+		&:not(:last-child)
+			margin-bottom: 45px
+		figure
+			margin-bottom: 20px
+		p
+			font-size: 13px
+	.cf-item
+		display: block
+		width: 100%
+		padding: 0
+		&:not(:last-child)
+			margin-bottom: 45px
+		&:before
+			margin-bottom: 20px
+		p
+			font-size: 13px
+	.cp-item
+		display: block
+		width: 100%
+		padding: 0
+		&:not(:last-child)
+			margin-bottom: 55px
+		&:before
+			margin-bottom: 20px
+		p
+			font-size: 13px
+	.cp-price
+		width: 200px
+		display: inline-block
+		margin-bottom: 25px
+	.cc-block
+		p
+			font-size: 13px
+	h3
+		font-size: 15px
+		margin-bottom: 3px
+	h4
+		margin-bottom: 7px
+	.chs-slide
+		img
+			left: 50%
+			transform: translateX(-50%)
+			max-height: 60%
+	.chs-texts
+		text-align: center
+		right: 20px
+		left: 20px
+		bottom: auto
+		top: 120px
+	.container
+		min-width: 320px
+		max-width: 500px
+	.container-relative
+		min-width: 320px
+		max-width: 500px
+	.header
+		position: fixed
+		background: fade-out(white, 0.1)
+		transition: background 500ms
+	.h-logo
+		img
+			transition-delay: 0ms
+	.dark
+		&:not(.nav-mobile-visible)
+			.header
+				background: fade-out(black, 0.2)
+		.content-appointment
+			background: fade-out(white, 0.1)
+			color: fade-out(black, 0.2)
+	.h-appointment,
+	.h-nav,
+	.content-controls,
+	.chs-controls,
+	.content .content-social
+		display: none
+	.h-logo
+		float: none
+		display: block
+		img
+			right: 0
+	.content-social
+		left: 20px
+		text-align: center
+		a
+			margin: 0 10px
+	.content-appointment
+		display: block
+		+stretch($top: auto, $position: fixed)
+		z-index: 1
+		height: 65px
+		line-height: 67px
+		overflow: hidden
+		font-weight: bold
+		letter-spacing: 1.3px
+		background: fade-out(black, 0.2)
+		color: white
+		cursor: pointer
+		text-transform: uppercase
+		text-align: center
+		transition: background 500ms, color 500ms
+	.form
+		width: 100%
+		// height: 100vh
+		position: fixed
+	.form-padded
+		padding: 0 20px
+	.nav-mobile
+		display: block
+		background: white
+		position: fixed
+		top: 0
+		bottom: 0
+		left: 100%
+		width: 100%
+		z-index: 2
+		+valign(middle)
+		transform: translateX(0)
+		transition: transform 200ms ease-out
+		&.visible
+			transform: translateX(-100%)
+	.nm-toggle
+		display: block
+		+size(100 100)
+		cursor: pointer
+		position: absolute
+		right: 0
+		top: 0
+	.nmt-show
+		content: ''
+		+size(25 9)
+		+stretch
+		&:before
+			content: ''
+			height: 2px
+			+stretch($bottom: auto)
+			background: black
+			transition: background 500ms
+		&:after
+			content: ''
+			height: 2px
+			+stretch($top: auto)
+			background: black
+			transition: background 500ms
+	.nmt-hide
+		content: ''
+		+size(20 20)
+		background: url(img('close.svg'))
+		+stretch
+		display: none
+	.nav-mobile-visible
+		.nmt-show
+			display: none
+		.nmt-hide
+			display: block
+	.nm-list
+		width: 100%
+		text-align: center
+		text-transform: uppercase
+		letter-spacing: 1px
+		font-weight: bold
+		li
+			cursor: pointer
+		span
+			display: block
+			line-height: 55px
+	.content-block
+		animation: none

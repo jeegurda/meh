@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/prefixfree.min.js"></script>
+	</head>
+	<body>
+		<!-- <noscript>Sorry, this page won't work without javascript</noscript> -->
+		<div id="meh-root">
+			<div class="meh">
+				<header class="header">
+					<div class="container-relative padded">
+						<a href="" class="h-logo">
+							<img class="hl-light" src="images/logo-b.svg" alt="">
+							<img class="hl-dark" src="images/logo-w.svg" alt="">
+						</a>
+						<div class="h-appointment">
+							<button class="button" data-action="toggleForm" data-form="appointmentForm" data-show="true">
+								<span>Записаться</span>
+							</button>
+						</div>
+						<nav class="h-nav">
+							<ul>
+								<li data-index="0" data-action="changeSlide">
+									<span>Ваш личный барбер</span>
+								</li>
+								<li data-index="1" data-action="changeSlide">
+									<span>Как это работает</span>
+								</li>
+								<li data-index="2" data-action="changeSlide">
+									<span>Удобство</span>
+								</li>
+								<li data-index="3" data-action="changeSlide">
+									<span>Цены</span>
+								</li>
+								<li data-index="4" data-action="changeSlide">
+									<span>Барберам</span>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="nm-toggle" data-action="toggleNavMobile">
+						<span class="nmt-show"></span>
+						<span class="nmt-hide"></span>
+					</div>
+				</header>
+
+				<section class="content">
+					<div class="content-slides">
+						<div class="content-slide content-index active">
+							<div class="content-hero-slider">
+								<div class="chs-slides">
+									<div class="chs-slide">
+										<img src="images/photo-01.png" alt="">
+									</div>
+									<div class="chs-slide">
+										<img src="images/photo-02.png" alt="">
+									</div>
+									<div class="chs-slide">
+										<img src="images/photo-03.png" alt="">
+									</div>
+								</div>
+								<div class="container-relative">
+									<div class="chs-texts">
+										<div class="chs-text">
+											<article>
+												<p>Важный момент &mdash; у нас не салоны красоты. Вам не будут пять раз мыть голову и не станут прыгать вокруг на протяжении полутора часов.</p>
+												<span>Егор Тсодов, барбер, 27 лет</span>
+											</article>
+										</div>
+										<div class="chs-text">
+											<article>
+												<p>Мы пользуемся мужскими средствами Baxter of California, Reuzel, Mr Natty, Uppercut Deluxe, Suavecito.</p>
+												<span>Алексей Рожков, барбер, 30 лет</span>
+											</article>
+										</div>
+										<div class="chs-text">
+											<article>
+												<p>Сидите с ноутбуком, угощайтесь «Хайнекеном» или крепким кофе с молоком – нам не жалко.</p>
+												<span>Александр Ильясюк, барбер, 25 лет</span>
+											</article>
+										</div>
+									</div>
+									<div class="chs-controls">
+										<ul>
+											<li data-index="0" data-action="changeHeroSlide"></li>
+											<li data-index="1" data-action="changeHeroSlide"></li>
+											<li data-index="2" data-action="changeHeroSlide"></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="container-relative">
+								<div class="content-social">
+									<a class="cs-facebook" target="_blank" href=""></a>
+									<a class="cs-instagram" target="_blank" href=""></a>
+									<a class="cs-twitter" target="_blank" href=""></a>
+								</div>
+							</div>
+							<div class="content-appointment" data-action="toggleAppointmentForm">
+								<div class="container">Записаться</div>
+							</div>
+						</div>
+						<div class="content-slide content-idea">
+							<div class="container padded">
+								<div class="ci-container">
+									<div class="ci-item content-block">
+										<figure>
+											<img src="images/image-01.png" alt="">
+										</figure>
+										<h3>Запишитесь к барберу</h3>
+										<p>В удобное для вас время и место</p>
+									</div>
+									<div class="ci-item content-block">
+										<figure>
+											<img src="images/image-02.png" alt="">
+										</figure>
+										<h3>Съездите к барберу</h3>
+										<p>У него есть все необходимое</p>
+									</div>
+									<div class="ci-item content-block">
+										<figure>
+											<img src="images/image-03.png" alt="">
+										</figure>
+										<h3>Платите за результат</h3>
+										<p>И наслаждайтесь новой стрижкой</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="content-slide content-features">
+							<div class="container padded">
+								<div class="cf-container">
+									<div class="cf-item content-block">
+										<h3>Низкие цены</h3>
+										<p>Вы платие барберу, а не салону</p>
+									</div>
+									<div class="cf-item content-block">
+										<h3>Лучшие барберы</h3>
+										<p>У нас не бывает случайных людей — только те, кто прошел отбор</p>
+									</div>
+									<div class="cf-item content-block">
+										<h3>Удобное место и время</h3>
+										<p>Наши барберы работают по всему городу</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="content-slide content-prices">
+							<div class="container padded">
+								<div class="cp-container">
+									<div class="cp-item content-block">
+										<div class="cp-price">1500</div>
+										<h3>Стрижка</h3>
+										<p>60 мин</p>
+									</div>
+									<div class="cp-item content-block">
+										<div class="cp-price">800</div>
+										<h3>Стрижка машинкой</h3>
+										<p>30 мин</p>
+									</div>
+									<div class="cp-item content-block">
+										<div class="cp-price">500</div>
+										<h3>Усы и борода</h3>
+										<p>30 мин</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="content-slide content-cooperate">
+							<div class="container padded">
+								<div class="cc-container content-block">
+								<h4>Хотите с нами сотрудничать?</h4>
+									<div class="cc-block cooperate-first">
+										<p>Сколько часов вы готовы работать в день</p>
+										<div class="cc-middle">
+											<div class="ccm-decrease" data-action="decreaseCooperateCounter"></div>
+											<div class="ccm-counter">0</div>
+											<div class="ccm-increase" data-action="increaseCooperateCounter"></div>
+										</div>
+										<button class="button" data-action="cooperate">
+											<span>Посчитать</span>
+										</button>
+									</div>
+									<div class="cc-block cooperate-second">
+										<p>В неделю вы сможете зарабатывать</p>
+										<div class="cc-middle">
+											<div class="ccm-result">0</div>
+										</div>
+										<button class="button" data-action="toggleForm" data-form="cooperateForm" data-show="true">
+											<span>Заполнить заявку</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container-relative">
+						<div class="content-controls">
+							<ul>
+								<li data-index="0" data-action="changeSlide"></li>
+								<li data-index="1" data-action="changeSlide"></li>
+								<li data-index="2" data-action="changeSlide"></li>
+								<li data-index="3" data-action="changeSlide"></li>
+								<li data-index="4" data-action="changeSlide"></li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<div class="content-dimmer"></div>
+
+				<section class="nav-mobile">
+					<ul class="nm-list">
+						<li data-index="0" data-action="scrollToSection">
+							<span>Ваш личный барбер</span>
+						</li>
+						<li data-index="1" data-action="scrollToSection">
+							<span>Как это работает</span>
+						</li>
+						<li data-index="2" data-action="scrollToSection">
+							<span>Удобство</span>
+						</li>
+						<li data-index="3" data-action="scrollToSection">
+							<span>Цены</span>
+						</li>
+						<li data-index="4" data-action="scrollToSection">
+							<span>Барберам</span>
+						</li>
+					</ul>
+					<div class="content-social">
+						<a class="cs-facebook" target="_blank" href=""></a>
+						<a class="cs-instagram" target="_blank" href=""></a>
+						<a class="cs-twitter" target="_blank" href=""></a>
+					</div>
+				</section>
+
+				<section class="form form-cooperate">
+					<section class="form-container">
+						<header>
+							<h4>Заявка на сотрудничество</h4>
+							<h5>Заполните форму ниже</h5>
+						</header>
+						<form method="POST" action="https://formspree.io/komolkin@gmail.com" name="cooperateForm">
+							<div class="form-padded">
+								<div class="input">
+									<input type="text" required name="name">
+									<span class="placeholder">Имя</span>
+									<p class="input-error">Имя</p>
+								</div>
+								<div class="input">
+									<input type="tel" required class="phone-input" data-regexp="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" name="phone">
+									<span class="placeholder">Телефон</span>
+									<p class="input-error">Телефон</p>
+								</div>
+								<div class="input">
+									<input type="text" required name="facebook">
+									<span class="placeholder">Facebook</span>
+									<p class="input-error">Facebook</p>
+								</div>
+								<button class="button light">
+									<span>Отправить заявку</span>
+								</button>
+							</div>
+						</form>
+					</section>
+					<section class="form-sent">
+						<div class="fs-container">
+							<span class="fs-icon"></span>
+							<h4>Спасибо</h4>
+							<p>Мы скоро с вами свяжемся</p>
+						</div>
+					</section>
+					<footer data-action="toggleForm" data-form="cooperateForm" class="form-hide"></footer>
+				</section>
+
+				<section class="form form-appointment">
+					<section class="form-container">
+						<header>
+							<h4>Назначить встречу</h4>
+							<h5>Выберите одну или несколько услуг</h5>
+						</header>
+						<form method="POST" action="https://formspree.io/komolkin@gmail.com" name="appointmentForm">
+							<div class="service-select">
+								<div class="ss-title" data-action="toggleServiceSelect">
+									<div class="form-padded">
+										<div class="sst-container">
+											<p class="sst-title">-</p>
+											<span>
+												<em class="sst-price">0</em> ₽ – <em class="sst-time">0</em> мин.
+											</span>
+										</div>
+									</div>
+								</div>
+								<div class="ss-dropdown">
+									<div class="ssd-item" data-index="0" data-service="0" data-action="selectService" data-time="20">
+										<span class="ssd-title">Стрижка</span>
+										<span class="ssd-price">1500</span>
+									</div>
+									<div class="ssd-item" data-index="1" data-service="1" data-action="selectService" data-time="10">
+										<span class="ssd-title">Стрижка машинкой</span>
+										<span class="ssd-price">800</span>
+									</div>
+									<div class="ssd-item" data-index="2" data-service="2" data-action="selectService" data-time="15">
+										<span class="ssd-title">Стрижка бороды</span>
+										<span class="ssd-price">500</span>
+									</div>
+									<div class="ssd-item" data-index="3" data-service="3" data-action="selectService" data-time="30">
+										<span class="ssd-title">Стрижка + борода</span>
+										<span class="ssd-price">1900</span>
+									</div>
+									<div class="ssd-item" data-index="4" data-service="4" data-action="selectService" data-time="25">
+										<span class="ssd-title">Стрижка машинкой + борода</span>
+										<span class="ssd-price">1200</span>
+									</div>
+								</div>
+								<input type="hidden" class="selected-service" name="service" value="">
+							</div>
+							<div class="form-padded">
+								<div class="input">
+									<input type="text" required name="name">
+									<span class="placeholder">Имя</span>
+									<p class="input-error">Имя</p>
+								</div>
+								<div class="input">
+									<input type="tel" required class="phone-input" data-regexp="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" name="phone">
+									<span class="placeholder">Телефон</span>
+									<p class="input-error">Телефон</p>
+								</div>
+								<div class="input">
+									<input type="email" required name="email">
+									<span class="placeholder">E-mail</span>
+									<p class="input-error">E-mail</p>
+								</div>
+								<button class="button light">
+									<span>Записаться</span>
+								</button>
+							</div>
+						</form>
+					</section>
+					<section class="form-sent">
+						<div class="fs-container">
+							<span class="fs-icon"></span>
+							<h4>Спасибо</h4>
+							<p>Мы скоро с вами свяжемся</p>
+						</div>
+					</section>
+					<footer data-action="toggleForm" data-form="appointmentForm" class="form-hide"></footer>
+				</section>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/mask.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+</html>
